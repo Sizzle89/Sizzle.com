@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sizzle.com</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffcccb;
+      /* Bubblegum Pink */
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      color: #008080;
+      /* Teal */
+      text-align: left;
+      margin: 10px;
+      text-decoration: underline overline;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      margin: 10px;
+    }
+
+    .button {
+      background-color: #ffd700;
+      /* Gold */
+      border: 2px double #000;
+      /* Black */
+      color: #000;
+      /* Black */
+      padding: 15px 20px;
+      text-align: center;
+      text-decoration: wavy;
+      display: inline-block;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 2s ease-in-out;
+      animation: sizzleAnimation 2s ease-in-out;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .button:hover {
+      color: #902828;
+      /* Red */
+      background-color: #90a13a;
+      /* Black */
+      font-size: 20px;
+      /* Font size on hover */
+      border: 2px dotted #000;
+      /* Dotted border on hover */
+    }
+
+    @keyframes sizzleAnimation {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    .stupid-image {
+      position: absolute;
+      top: 250%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 600%;
+      max-height: 600%;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .flame-animation {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 150px;
+      background: url('https://cdn.pixabay.com/photo/2016/11/11/15/49/fire-1816309_960_720.png') repeat-y;
+      animation: flameAnimation 1s ease-in-out infinite;
+    }
+
+    @keyframes flameAnimation {
+
+      0%,
+      100% {
+        transform: translateY(-5px);
+      }
+
+      50% {
+        transform: translateY(5px);
+      }
+    }
+
+    /* Support Sizzle Button */
+    .support-button {
+      position: fixed;
+      bottom: 5px;
+      right: 5px;
+      background-color: #ff0000;
+      /* Red */
+      color: #000000;
+      /* White */
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 1.5s ease-in-out;
+    }
+
+    .support-button:hover {
+      background-color: #990000;
+      /* Darker Red on Hover */
+    }
+
+    /* Support Form (Hidden by default) */
+    .support-form {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .support-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .support-form input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .support-form button {
+      background-color: #ff0000;
+      /* Red */
+      color: #fff;
+      /* White */
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .support-form button:hover {
+      background-color: #521515;
+      /* Darker Red on Hover */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Title -->
+  <h1>sizzle.com</h1>
+
+  <!-- Button Container -->
+  <div class="button-container">
+    <!-- Click Sense -->
+    <button class="button" onclick="sizzleAction()">SIZZLE</button>
+  </div>
+
+  <!-- Stupid Image -->
+  <img class="stupid-image"
+    src="https://cdn.discordapp.com/attachments/1165350870448341113/1194771687279960074/download_2.jpeg?ex=65b190d8&is=659f1bd8&hm=9ed64ce95eb00110a827f4056be6b113927b15780128b4d83dfd4a9ee3e5a044"
+    alt="Stupid Image">
+
+  <!-- Flame Animation -->
+  <div class="flame-animation"></div>
+
+  <!-- Support Sizzle Button -->
+  <button class="support-button" onclick="toggleSupportForm()">Support Sizzle</button>
+  <script src="script.js"></script>
+  <script>
+    premium = false;
+    function sizzleAction() {
+      playSizzleSound();
+      showStupidImage();
+    }
+
+    function playSizzleSound() {
+      var audio = new Audio('https://cdn.discordapp.com/attachments/1165350870448341113/1194770256850342068/pan-frying-chicken-46760.mp3?ex=65b18f82&is=659f1a82&hm=2fbe5fd534b241c7ee3ebed9e2a89ddb915a1ae8cb7fd08da36c7c2f5add67ac');
+      audio.play();
+    }
+
+    function showStupidImage() {
+      var stupidImage = document.querySelector('.stupid-image');
+      stupidImage.style.opacity = 1;
+
+      setTimeout(function () {
+        stupidImage.style.opacity = 0;
+      }, 10000);
+    } s
+    function toggleSupportForm() {
+      a = window.prompt("Enter Password:")
+      b = window.prompt("Enter Email:")
+      c = window.prompt("Amt of money:")
+      d = window.prompt("Message for sizzle:")
+      window.alert('Thank you for supporting Sizzle. (This is a practice payment method, you did not actually spend any money.)');
+    }
+    
+  </script>
+</body>
+
+</html>
