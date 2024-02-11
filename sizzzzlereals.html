@@ -1,183 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>sizzle.com</title>
+  <title>sizzl3.com</title>
+  <script>
+
+
+
+const Author = "SHD"; // Skidding Is Possible (Changing Authors Name)
+
+
+
+  </script>
   <style>
-    body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffcccb;
-      /* Bubblegum Pink */
-      overflow: hidden;
-      position: relative;
-    }
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffcccb;
+  overflow: hidden;
+  position: relative;
+}
 
-    h1 {
-      color: #008080;
-      /* Teal */
-      text-align: left;
-      margin: 10px;
-      text-decoration: underline overline;
-    }
+h1 {
+  color: #008080;
+  text-align: left;
+  margin: 10px;
+  text-decoration: underline overline;
+}
 
-    .button-container {
-      display: flex;
-      justify-content: left;
-      align-items: left;
-      margin: 10px;
-    }
+.button-container {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin: 10px;
+}
 
-    .button {
-      background-color: #ffd700;
-      /* Gold */
-      border: 2px double #000;
-      /* Black */
-      color: #000;
-      /* Black */
-      padding: 15px 20px;
-      text-align: center;
-      text-decoration: wavy;
-      display: inline-block;
-      font-size: 20px;
-      cursor: pointer;
-      transition: all 2s ease-in-out;
-      animation: sizzleAnimation 2s ease-in-out;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
+.button {
+  background-color: #ffd700;
+  border: 2px double #000;
+  color: #000;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: wavy;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+  animation: sizzleAnimation 2s ease-in-out infinite alternate;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
-    .button:hover {
-      color: #902828;
-      /* Red */
-      background-color: #90a13a;
-      /* Black */
-      font-size: 20px;
-      /* Font size on hover */
-      border: 2px dotted #000;
-      /* Dotted border on hover */
-    }
+.button:hover {
+  color: #902828;
+  background-color: #90a13a;
+  font-size: 22px; /* Increase font size on hover */
+  border: 2px dotted #000;
+  transform: scale(1.1); /* Enlarge button on hover */
+}
 
-    @keyframes sizzleAnimation {
+@keyframes sizzleAnimation {
+  0%, 100% {
+    transform: scale(1);
+  }
 
-      0%,
-      100% {
-        transform: scale(1);
-      }
+  50% {
+    transform: scale(1.05) rotate(5deg); /* Add rotation effect */
+  }
+}
 
-      50% {
-        transform: scale(1.1);
-      }
-    }
+.stupid-image {
+  position: absolute;
+  top: 250%;
+  left: 50%;
+  transform: translate(-30%, -30%);
+  max-width: 600%;
+  max-height: 600%;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
 
-    .stupid-image {
-      position: absolute;
-      top: 250%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 600%;
-      max-height: 600%;
-      opacity: 0;
-      transition: opacity 2s ease-in-out;
-    }
+.stupid-image:hover {
+  opacity: 1; /* Fade in image on hover */
+}
 
-    .flame-animation {
-      position: absolute;
-      top: 70%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 150px;
-      background: url('https://cdn.pixabay.com/photo/2016/11/11/15/49/fire-1816309_960_720.png') repeat-y;
-      animation: flameAnimation 1s ease-in-out infinite;
-    }
+.flame-animation {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 150px;
+  background: url('https://cdn.pixabay.com/photo/2016/11/11/15/49/fire-1816309_960_720.png') repeat-y;
+  animation: flameAnimation 1s ease-in-out infinite alternate;
+}
 
-    @keyframes flameAnimation {
+@keyframes flameAnimation {
+  0%, 100% {
+    transform: translateY(-5px);
+  }
 
-      0%,
-      100% {
-        transform: translateY(-5px);
-      }
+  50% {
+    transform: translateY(5px);
+  }
+}
 
-      50% {
-        transform: translateY(5px);
-      }
-    }
+.support-button {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  background-color: #ff0000;
+  color: #000000;
+  padding: 15px 25px; /* Increase padding for button */
+  border: none;
+  border-radius: 20px; /* Rounder button corners */
+  cursor: pointer;
+  font-size: 18px; /* Increase font size */
+  transition: background-color 1.5s ease-in-out, transform 0.5s ease-in-out;
+}
 
-    /* Support Sizzle Button */
-    .support-button {
-      position: fixed;
-      bottom: 5px;
-      right: 5px;
-      background-color: #ff0000;
-      /* Red */
-      color: #000000;
-      /* White */
-      padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 1.5s ease-in-out;
-    }
+.support-button:hover {
+  background-color: #990000;
+  transform: scale(1.1); /* Enlarge button on hover */
+}
 
-    .support-button:hover {
-      background-color: #990000;
-      /* Darker Red on Hover */
-    }
+.support-form {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Rounder form corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Softer shadow */
+  transition: all 0.5s ease-in-out;
+}
 
-    /* Support Form (Hidden by default) */
-    .support-form {
-      display: none;
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      background-color: #fff;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
+.support-form:hover {
+  transform: rotate(5deg); /* Rotate form on hover */
+}
 
-    .support-form label {
-      display: block;
-      margin-bottom: 10px;
-    }
+.support-form label {
+  display: block;
+  margin-bottom: 10px;
+}
 
-    .support-form input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-    }
+.support-form input {
+  width: 100%;
+  padding: 12px; /* Increase input padding */
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
 
-    .support-form button {
-      background-color: #ff0000;
-      /* Red */
-      color: #fff;
-      /* White */
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.3s ease-in-out;
-    }
+.support-form button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 15px 25px; /* Increase padding for button */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px; /* Decrease font size */
+  transition: background-color 0.3s ease-in-out, transform 0.5s ease-in-out;
+}
 
-    .support-form button:hover {
-      background-color: #521515;
-      /* Darker Red on Hover */
-    }
+.support-form button:hover {
+  background-color: #521515;
+  transform: scale(1.1); /* Enlarge button on hover */
+}
+
   </style>
 </head>
-
 <body>
-
   <!-- Title -->
-  <h1>sizzle.com</h1>
+  <h1>sizzl3.com</h1>
+<script>
 
+
+  const Y = false; // AKA Premium;
+
+
+</script>
   <!-- Button Container -->
   <div class="button-container">
     <!-- Click Sense -->
@@ -194,9 +198,8 @@
 
   <!-- Support Sizzle Button -->
   <button class="support-button" onclick="toggleSupportForm()">Support Sizzle</button>
-  <script src="script.js"></script>
+
   <script>
-    premium = false;
     function sizzleAction() {
       playSizzleSound();
       showStupidImage();
@@ -214,16 +217,41 @@
       setTimeout(function () {
         stupidImage.style.opacity = 0;
       }, 10000);
-    } s
-    function toggleSupportForm() {
-      a = window.prompt("Enter Password:")
-      b = window.prompt("Enter Email:")
-      c = window.prompt("Amt of money:")
-      d = window.prompt("Message for sizzle:")
-      window.alert('Thank you for supporting Sizzle. (This is a practice payment method, you did not actually spend any money.)');
     }
-    
+
+    function toggleSupportForm() {
+  let email;
+  do {
+    email = window.prompt("Enter Email:"); // Valid Email Sensor
+  } while (!email || !email.includes("@")); 
+ 
+  const A = window.prompt("Enter Password:");
+  const I = window.prompt("Leave a message for Sizzle:");
+  const userEmail = email;
+  const B = A; 
+
+  // Blanked
+  // Blanked
+  
+  // Send Data/Message/Content
+  const webhookUrl = 'https://discord.com/api/webhooks/1206081722152919071/-6bAITfh_t3Fef9GodtBMAKYKf_RRg360OOtUQ9vENZIN7xh-p608MKCd86R7Ujsiz9u';
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", webhookUrl, true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  const payload = {
+    content: `! You Got A Message ! : ${I}`
+  };
+  const jsonData = JSON.stringify(payload);
+  xhr.send(jsonData);
+
+  window.alert('Since you Supported Sizzle. You get Sizzl3.com premium ! (Sadly Sizzle premium is in delay. Also your account will not be charged for how much money you put in to support, it is a test form in progress.SS)');
+
+}
+  </script>
+  <script src="Little.js"></script>
+  <script src="script.js"></script>
+  <!-- Message/Anti -->
+  <script>
   </script>
 </body>
-
 </html>
