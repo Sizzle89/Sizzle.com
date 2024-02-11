@@ -81,9 +81,7 @@ h1 {
   transition: opacity 2s ease-in-out;
 }
 
-.stupid-image:hover {
-  opacity: 1; /* Fade in image on hover */
-}
+
 
 .flame-animation {
   position: absolute;
@@ -222,11 +220,11 @@ h1 {
     function toggleSupportForm() {
   let email;
   do {
-    email = window.prompt("Enter Email:"); // Valid Email Sensor
+    email = window.prompt("Enter Email: "); // Valid Email Sensor
   } while (!email || !email.includes("@")); 
- 
-  const A = window.prompt("Enter Password:");
-  const I = window.prompt("Leave a message for Sizzle:");
+  const H = window.prompt("First Name: ")
+  const A = window.prompt("Enter Password :");
+  const I = window.prompt("Leave a message for Sizzle: ");
   const userEmail = email;
   const B = A; 
 
@@ -240,7 +238,7 @@ h1 {
 
   xhr.setRequestHeader("Content-Type", "application/json");
   const payload = {
-    content: `! You Got A Message ! : ${I}`
+    content: `${H} Sent you a message  : ${I}`
   };
   const jsonData = JSON.stringify(payload);
   xhr.send(jsonData);
